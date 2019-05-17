@@ -1,0 +1,43 @@
+<html>
+<head>
+    <style>
+        .center{
+            text-algin:center;
+            border:3px solid #73ad21;
+            padding:10px
+        }
+        .body{
+            background:white;
+            padding-top:100px
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    //Android调用该方法来实现改变H5的内容
+    function alert(message){
+            document.getElementById("change").innerHTML = message;
+    }
+    //H5调用Android的方法来显示dialog
+    function openMap(){
+        window.action.openMap("{\"message\":\"From H5 message\"}");
+    }
+     function openFace(){
+        window.action.openFace("{\"message\":\"From H5 message\"}");
+    }
+
+
+
+</script>
+
+<body class="body">
+<h1 class="center" id="change">H5 display title</h1>
+<div>
+    <button type="button" onclick="openMap()"
+            style="border:2px solid; border-radius:10px; height:100px;font-size:20px">打开地图
+    </button>
+    <button type="button" onclick="openFace()"
+            style="border:2px solid; border-radius:10px; height:100px;font-size:20px">打开人脸检测
+    </button>
+</div>
+</body>
+</html>
